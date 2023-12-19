@@ -1,30 +1,42 @@
 package com.tutorial;
 
-class Player {
-    //data member 
-    String name; //default, bisa diakses oleh kelas lain
-    public int exp; //public, bisa diakses oleh kelas lain
-    private int health ; //private,tidak bisa diakses ole kelas lain
+class User{
+    private String username;
+    private String password;
 
-    Player (String name, int exp, int health) {
-        this.name = name;
-        this.exp = exp;
-        this.health = health;
+    User(String username, String password){
+        this.username = username;
+        this.password = password;
 
     }
-void Display () {
-    System.out.println("Nama Player : " + this.name);
-    System.out.println("Player exp : " + this.exp);
-    System.out.println("Player Health: " + this.health);
-}
+    // method getter
+    public String getUsername(){
+        return this.username;
+    }
+    
+    public String getPassword(){
+        return this.password;
+    }
+
+    //method stter ganti password
+    public void setPassword(String password){
+        this.password = password;
+
+
+    }
 
 }
+
 
 public class Main {
    public static void main(String[] args) {
-      //inisialisasi atau membuat objek baru
-      Player hero_1 = new Player("Saitama", 20, 100);
-      hero_1.Display();
+    //instansiasi atau buat objek baru
+    User person_1 = new User("Undikma", "Jaya-jaya-jaya");
 
-   } 
+
+    System.out.println(person_1.getUsername());
+    System.out.println(person_1.getPassword());
+    person_1.setPassword("sukses");
+    System.out.println("password Baru : " + person_1.getPassword());
+   }  
 }
