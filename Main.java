@@ -1,42 +1,33 @@
 package com.tutorial;
 
-class User{
-    private String username;
-    private String password;
 
-    User(String username, String password){
-        this.username = username;
-        this.password = password;
-
-    }
-    // method getter
-    public String getUsername(){
-        return this.username;
-    }
+class Hero {
+    String name;
     
-    public String getPassword(){
-        return this.password;
-    }
-
-    //method stter ganti password
-    public void setPassword(String password){
-        this.password = password;
-
+    void display(){
+         System.out.println("Name : "+ name);
 
     }
-
 }
+   
+    class HeroTank extends Hero{
+        float health;
 
-
+        void display(){
+         System.out.println("health : "+ health);
+        }  
+}
+    
 public class Main {
    public static void main(String[] args) {
-    //instansiasi atau buat objek baru
-    User person_1 = new User("Undikma", "Jaya-jaya-jaya");
+      
+      Hero hero_1 = new Hero();
+      hero_1.name = "ucup";
+      hero_1.display();
 
 
-    System.out.println(person_1.getUsername());
-    System.out.println(person_1.getPassword());
-    person_1.setPassword("sukses");
-    System.out.println("password Baru : " + person_1.getPassword());
-   }  
+      HeroTank hero_2 = new HeroTank();
+      hero_2.name = "Pahlawan";
+      hero_2.display();
+   } 
 }
