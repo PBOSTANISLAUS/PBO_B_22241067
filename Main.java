@@ -1,51 +1,33 @@
 package com.tutorial;
 
 
-class Hero{
-    String nama;
-
-    public void display(){
-        System.out.println("nama hero : "+ nama);
-    }
-}
-
-    //sub class hero tank
-class HeroTank extends Hero{
-        String healt;
-        String nama;
-
-
-    public void display(){
-        System.out.println("nama hero : " + nama);
-        System.out.println("Healt : "+ healt);
-    }
-}
-
-class HeroMarksman extends Hero{
-        String attackspeed;
-        String nama;
-
-        public void display (){
-            System.out.println("nama hero 2 : " + nama);
-            System.out.println("attackspeed : " + attackspeed);
-        
-    }
-}
-
-public class Main {
+class Hero {
+    String name;
     
-    public static void main(String[] args) {
+    void display(){
+         System.out.println("Name : "+ name);
 
-     HeroTank heroTank = new HeroTank();
-     heroTank.nama = "saitama";
-     heroTank.healt= "20";
-     heroTank.display();
-
-     HeroMarksman heroMarksman = new HeroMarksman();
-     heroMarksman.nama = "pablito";
-     heroMarksman.attackspeed = "100";
-     heroMarksman.display();
     }
 }
+   
+    class HeroTank extends Hero{
+        float health;
+
+        void display(){
+         System.out.println("health : "+ health);
+        }  
+}
+    
+public class Main {
+   public static void main(String[] args) {
+      
+      Hero hero_1 = new Hero();
+      hero_1.name = "ucup";
+      hero_1.display();
 
 
+      HeroTank hero_2 = new HeroTank();
+      hero_2.name = "Pahlawan";
+      hero_2.display();
+   } 
+}
